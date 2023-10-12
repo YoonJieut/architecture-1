@@ -1,4 +1,5 @@
 const http = require('http');
+const HTMLTemplate = require('./model/HTMLTemplate');
 
 const contentType = {
   "Content-Type" : "text/html; charset=utf-8"
@@ -8,7 +9,7 @@ const contentType = {
 const server = http.createServer((req, res)=>{
   if (req.method === 'GET' && req.url ==="/"){
     res.writeHead(200, contentType);
-    res.end("넘모 피곤하공~~");
+    res.end(HTMLTemplate);
   }else {
     res.writeHead(404, contentType);
     res.end('<h1>요청 메세지를 찾을 수 없습니다 404 에러 응답</h1>')
